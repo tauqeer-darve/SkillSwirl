@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TicTacToe</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+
+  <head>
+
+  
+
+    <title>Tic-Tac-Toe</title>
+
+    <style>
+
+      body {
+
+  font-family: Arial, sans-serif;
+
+  background-color: #eee;
+
+}
+
+#board {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  width: 500px;
+
+  height: 500px;
+
+  border: none;
+
+  margin: 0 auto;
+
+  background-color: #fff;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+#board div {
+
+  margin: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 166px;
+
+  height: 168px;
+
+  font-size: 72px;
+
+  font-weight: bold;
+
+  border: 4px solid black;
+
+  background-color: #fff;
+
+  box-sizing: border-box;
+
+  transition: background-color 0.5s;
+
+}
+
+#board div:hover {
+
+  background-color: #ddd;
+
+}
+
+#win-message {
+
+  display: none;
+
+  font-size: 32px;
+
+  text-align: center;
+
+  margin: 16px;
+
+}
+
+#restart-button {
+
+  display: block;
+
+  margin: 16px auto;
+
+  padding: 8px 16px;
+
+  border: none;
+
+  border-radius: 4px;
+
+  background-color: #333;
+
+  color: #fff;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  transition: background-color 0.5s;
+
+}
+
+#restart-button:hover {
+
+  background-color: #222;
+
+}
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <div id="board"></div>
+
+    <div id="win-message">X wins!</div>
+
+    <button id="restart-button">Restart</button>
+
+    <script>
+
+      const board = document.getElementById("board");
+
+      const cells = [];
+
+      let xIsNext = true;
+
+      function handleClick(event) {
+
+        const cell = event.target;
+
+        const row = cell.getAttribute("data-row");
+
+        const col = cell.getAttribute("data-col");
+
+        if (cell.textContent !== "") {
+
+          // Cell is already occupied, do nothing
+
+          return;
+
+        }
+
+        if (xIsNext) {
+
+          cell.textContent = "X";
+
+        } else {
+
+          cell.textContent = "O";
+
+        }
+
+        xIsNext = !xIsNext;
+
+        checkForWin();
+
+      }
+
+      function createCell(row, col) {
+
+        const cell = document.createElement("div");
+
+        cell.setAttribute("data-row", row);
+
+        cell.setAttribute("data-col", col);
+
+        cell.addEventListener("click", handleClick);
+
+        cells.push(cell);
+
+        board.appendChild(cell);
+
+      }
+
+      function checkForWin() {
+
+        // Check rows
+
+        for (let row = 0; row < 3; row++) {
+
+          if (
+
+            cells[row * 3].textContent === cells[row * 3 + 1].textContent &&
+
+            cells[row * 3 + 1].textContent === cells[row * 3 + 2].textContent &&
+
+            cells[row * 3].textContent !== ""
+
+          ) {
+
+            showWinMessage(cells[row * 3].textContent);
+
+            return;
+
+          }
+
+        }
+
+        // Check columns
+
+        for (let col = 0; col < 3; col++) {
+
+          if (
+
+            cells[col].textContent === cells[col + 3].textContent &&
+
+            cells[col + 3].textContent === cells[col + 6].textContent &&
+
+            cells[col].textContent !== ""
+
+          ) {
+
+            showWinMessage(cells[col].textContent);
+
+            return;
+
+          }
+
+        }
+
+        // Check diagonals
+
+        if (
+
+          cells[0].textContent === cells[4].textContent &&
+
+          cells[4].textContent === cells[8].textContent &&
+
+                  cells[0].textContent !== ""
+
+        ) {
+
+          showWinMessage(cells[0].textContent);
+
+          return;
+
+        }
+
+        if (
+
+          cells[2].textContent === cells[4].textContent &&
+
+          cells[4].textContent === cells[6].textContent &&
+
+          cells[2].textContent !== ""
+
+        ) {
+
+          showWinMessage(cells[2].textContent);
+
+          return;
+
+        }
+
+        // Check for draw
+
+        let draw = true;
+
+        for (const cell of cells) {
+
+          if (cell.textContent === "") {
+
+            draw = false;
+
+            break;
+
+          }
+
+        }
+
+        if (draw) {
+
+          showWinMessage("Draw");
+
+        }
+
+      }
+
+      function showWinMessage(winner) {
+
+        let message;
+
+        if (winner === "X") {
+
+          message = "X wins!";
+
+        } else if (winner === "O") {
+
+          message = "O wins!";
+
+        } else {
+
+          message = "It's a draw!";
+
+        }
+
+        document.getElementById("win-message").textContent = message;
+
+        document.getElementById("win-message").style.display = "block";
+
+        document.getElementById("restart-button").style.display = "block";
+
+      }
+
+      function restartGame() {
+
+        for (const cell of cells) {
+
+          cell.textContent = "";
+
+        }
+
+        document.getElementById("win-message").style.display = "none";
+
+        document.getElementById("restart-button").style.display = "none";
+
+        xIsNext = true;
+
+      }
+
+      document.getElementById("restart-button").addEventListener("click", restartGame);
+
+      for (let row = 0; row < 3; row++) {
+
+        for (let col = 0; col < 3; col++) {
+
+          createCell(row, col);
+
+        }
+
+      }
+
+    </script>
+
+  </body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>

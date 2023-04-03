@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="/home/tauqeerd/Documents/Projects/Phoenix/img/logo.jpg">
+	<title>SkillSwirl</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			color: #222;
+			background-color: #f8f9fa;
+		}
+		
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		
+		header {
+			display: flex;
+			align-items: center;
+			margin-right: 25px;
+			justify-content: space-between;
+			#padding: 20px 0;
+			border-bottom: 1px solid #e6e6e6;
+		}
+		
+		.search {
+			display: flex;
+			align-items: center;
+			background-color: #fff;
+			border: 1px solid #e6e6e6;
+			border-radius: 30px;
+			padding: 10px;
+		}
+		
+		.search input[type="text"] {
+			flex: 1;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			padding: 10px;
+			background-color: transparent;
+		}
+		
+		.search button {
+			background-color: #ff4500;
+			color: #fff;
+			border: none;
+			border-radius: 30px;
+			font-size: 16px;
+			padding: 10px 20px;
+			margin-left: 10px;
+			cursor: pointer;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.search button:hover {
+			background-color: #ff5e00;
+		}
+		
+		.nav {
+			display: flex;
+			align-items: center;
+		}
+		
+		.nav li {
+			list-style: none;
+			margin-left: 20px;
+		}
+		
+		.nav li a {
+			text-decoration: none;
+			color: #222;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.nav li a:hover {
+			background-color: #e6e6e6;
+			border-radius: 10px;
+		}
+		
+		.hero {
+			background-image: url("https://images.unsplash.com/photo-1581094355982-2f12d1db4558");
+			background-size: cover;
+			background-position: center;
+			height: 600px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px #000;
+		}
+		
+		.hero h1 {
+			font-size: 64px;
+			margin: 0;
+		}
+		
+		.hero p {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		.categories {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 50px 0;
+		}
+		
+		.category {
+			flex: 1;
+			margin-right: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+		}
+		
+		.category:hover {
+			transform: translateY(-10px);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+		}
+		
+		.category img {
+			width: 100%;
+			height: 200px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+		}
+		
+		.featured {
+			margin-bottom: 50px;
+		}
+		
+		.featured h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			display: flex;
+			margin-bottom: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		
+		.course img {
+			width: 200px;
+			height: 200px;
+			object-fit: cover;
+		}
+		
+		.course-info {
+			flex: 1;
+			padding: 20px;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+			color: #888;
+		}
+		
+		.course-info a {
+			background-color: #ff4500;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: 16px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.course-info a:hover {
+			background-color: #ff5e00;
+		}
+		
+		.footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.footer p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+		
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.footer a:hover {
+			color: #ff4500;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+			
+			header {
+				flex-direction: column;
+				align
+			justify-content: center;
+			text-align: center;
+			padding: 20px;
+			margin-bottom: 50px;
+		}
+		
+		.header img {
+			width: 150px;
+			height: 150px;
+			object-fit: cover;
+			border-radius: 50%;
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.header h1 {
+			font-size: 36px;
+			margin: 0;
+			margin-bottom: 0px;
+		}
+		
+		.header p {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+			color: #888;
+		}
+		
+		.categories {
+			flex-direction: column;
+		}
+		
+		.category {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.course img {
+			margin-bottom: 20px;
+		}
+		
+		.course-info {
+			text-align: center;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course-info a {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+</style>
+</head>
+<body>
+	<header class="header">
+	    <p></p>
+		<div>
+		     <h1 align="center">✎ SkillSwirl 🕹</h1>
+		     <p align='center'>𓆩Expand your skills, Elevate your game𓆪</p>
+		</div>
+		<p></p>
+	</header>
+	<div class="container">
+		<section class="categories">
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/learn.gif" alt="Learn">
+				<h2>Learn</h2>
+				<p>Learning can be an exciting experience that can open up new opportunities and help you grow both personally and professionally.</p>
+			</div>
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/play.gif" alt="Play">
+				<h2>Play</h2>
+				<p>Games can be a fun and engaging way to pass the time, socialize with others, and challenge your mind.</p>
+			</div>
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/success.gif" alt="Flappy Bird">
+				<h2>Succeed</h2>
+				<p>Success is a journey, not a destination, and it is important to enjoy the process and learn from both successes and failures along the way.</p>
+			</div>
+		</section>
+		<section class="featured">
+			<h2>Featured Games</h2>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/tictactoe.gif" alt="TicTacToe">
+				<div class="course-info">
+					<h3>TicTacToe</h3>
+					<p>Tictactoe is a game played on a 3x3 grid where two players take turns marking X's and O's, with the goal of getting three in a row. It is a simple and classic game often played on paper or a board.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Games/TicTacToe/index.html">Play Now</a>
+				</div>
+			</div>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/pong.gif" alt="Tile Pong">
+				<div class="course-info">
+					<h3>Tile Pong</h3>
+					<p>Pong is a simple 2D electronic game where two players use paddles to hit a ball back and forth across a screen, with the goal of making the opponent miss the ball. It is considered one of the first video games and was released by Atari in 1972.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Games/Tile Pong/index.html">Play Now</a>
+				</div>
+			</div>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/flappybird.gif" alt="Flappy Bird">
+				<div class="course-info">
+					<h3>Flappy Bird</h3>
+					<p>Flappy Bird is a simple mobile game where the player controls a bird by tapping the screen to make it flap its wings and navigate through a series of pipes. The game is known for its difficulty and addictive nature.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Games/Flappy Bird/index.html">Play Now</a>
+				</div>
+			</div>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/tetris.gif" alt="Tetris">
+				<div class="course-info">
+					<h3>Tetris</h3>
+					<p>Tetris is a classic video game that was first created in 1984. The game involves manipulating falling blocks of various shapes to create complete rows without any gaps. When a complete row is formed, it disappears, and the player earns points.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Games/Tetris/index.html">Play Now</a>
+				</div>
+			</div>
+		</section>
+		<section class="popular">
+			<h1>Featured Courses</h1>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/front.gif" alt="Course">
+				<div class="course-info">
+					<h3>Frontend Development</h3>
+					<p>The term "Frontend Development" refers to the process of designing and creating the user interface of a website or application. This involves writing HTML, CSS, and JavaScript code to create the layout, style, and interactivity of the website or application that users interact with. Frontend developers must have a strong understanding of user experience, design principles, and web development technologies.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Frontend.html">Enroll Now</a>
+				</div>
+			</div>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/back.gif" alt="Course">
+				<div class="course-info">
+					<h3>Backend Development</h3>
+					<p>Backend development is the development of server-side applications, services, and APIs that enable the functionality of an application or a website. It involves writing code that runs on the server and interacts with databases, APIs, and other resources to provide data and functionality to the frontend of the application. The goal of backend development is to create robust, scalable, and secure systems that can handle a large number of users and data.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Backend.html">Enroll Now</a>
+				</div>
+			</div>
+			<div class="course">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/full.gif" alt="Course">
+				<div class="course-info">
+					<h3>Full Stack Development</h3>
+					<p>Full stack development refers to the development of both the frontend and backend components of a web application. It involves working with a variety of programming languages, frameworks, and tools to build the entire stack of technologies needed for a web application to function. A full stack developer is responsible for creating and implementing the entire application, from the user interface to the database, and everything in between.</p>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Fullstack.html">Enroll Now</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					
+					<a align='center' href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/About.html">About Us</a>
+				
+				</div>
+			</div>
+			<div class="course">
+				<div>
+                
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
+

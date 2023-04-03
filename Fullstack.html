@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="/home/tauqeerd/Documents/Projects/Phoenix/img/logo.jpg">
+	<title>FullStack Development - SkillSwirl</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			color: #222;
+			background-color: #f8f9fa;
+		}
+		
+		.container {
+			max-width: 1300px;
+			margin: 0 auto;
+			#padding: 20px;
+		}
+		
+		.nav {
+			display: flex;
+			align-items: center;
+		}
+		
+		.nav li {
+			list-style: none;
+			margin-left: 20px;
+		}
+		
+		.nav li a {
+			text-decoration: none;
+			color: #222;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.nav li a:hover {
+			background-color: #e6e6e6;
+			border-radius: 10px;
+		}
+		
+		.hero {
+			background-image: url("https://images.unsplash.com/photo-1581094355982-2f12d1db4558");
+			background-size: cover;
+			background-position: center;
+			height: 600px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px #000;
+		}
+		
+		.hero h1 {
+			font-size: 64px;
+			margin: 0;
+		}
+		
+		.hero p {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		.categories {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 25px 0;
+		}
+		
+		.category {
+			flex: 1;
+			margin-right: 20px;
+			margin-left: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+		}
+		
+		.category:hover {
+			transform: translateY(-10px);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+		}
+		
+		.category img {
+			width: 1225px;
+			height: 400px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+		}
+		
+		.featured {
+			margin-bottom: 50px;
+		}
+		
+		.featured h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			display: flex;
+			margin-bottom: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		
+		
+		
+		
+		.course-info {
+			flex: 1;
+			padding: 20px;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+			color: #5f3333;
+		}
+		
+		.course-info a {
+			background-color: #ff4500;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: 16px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.course-info a:hover {
+			background-color: #ff5e00;
+		}
+		
+		.footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.footer p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+		
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.footer a:hover {
+			color: #ff4500;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+			
+			header {
+				flex-direction: column;
+				align
+			justify-content: center;
+			text-align: center;
+			padding: 20px;
+			margin-bottom: 50px;
+		}
+		
+				
+		.categories {
+			flex-direction: column;
+		}
+		
+		.category {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.course img {
+			margin-bottom: 20px;
+		}
+		
+		.course-info {
+			text-align: center;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course-info a {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<section class="categories">
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/fullstack.gif" alt="Learn">
+				<h2>FullStack Development</h2>
+				<p>Full stack development refers to the development of both the frontend and backend components of a web application. It involves working with a variety of programming languages, frameworks, and tools to build the entire stack of technologies needed for a web application to function. A full stack developer is responsible for creating and implementing the entire application, from the user interface to the database, and everything in between.</p>
+			</div>
+			
+		</section>
+		<section class="featured">
+			<h2>FullStack Roadmap:</h2>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Get started with frontend</h3><br>
+				    <a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Frontend.html" target="_blank">Check out the frontend development roadmap</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Get started with backend</h3><br>
+				    <a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Backend.html" target="_blank">Check out the backend development roadmap</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning Typescript</h3><br>
+					<a href="https://www.codecademy.com/learn/learn-typescript" target="_blank">Learn Typescript - Codecademy</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/learn-typescript-beginners-guide/" target="_blank">Learn Typescript - FreeCodeCamp</a><br><br><br>
+					<a href="https://youtu.be/gp5H0Vw39yw" target="_blank">Learn Typescript - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.typescriptlang.org/docs/" target="_blank">Typescript documentation</a><br><br><br>
+					<a href="https://exercism.org/tracks/typescript" target="_blank">Practice Typescript - exercism</a><br><br><br>
+					<p>Typescript tutorials</p>
+					<a href="https://youtu.be/d56mG7DezGs" target="_blank">Typescript Tutorial - Programming with mosh(Youtube)</a><br><br><br>
+					<a href="https://www.tutorialspoint.com/typescript/index.htm" target="_blank">Typescript Tutorial - TutorialsPoint</a><br><br><br>
+					<a href="https://youtube.com/playlist?list=PL4cUxeGkcC9gUgr39Q_yD6v-bSyMwKPUI" target="_blank">Typescript Tutorial - The Net Ninja(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b" target="_blank">Typescript Tutorial - Dave Gray(Youtube)</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning GraphQL</h3><br>
+					<a href="https://youtu.be/ZQL7tL2S0oQ" target="_blank">Learn GraphQL in 40 minute - Web Dev Simplified(Youtube)</a><br><br><br>
+					<a href="https://youtu.be/ed8SzALpx1Q" target="_blank">GraphQL full course - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://youtu.be/BcLNfwF04Kw" target="_blank">GraphQL crash course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://graphql.org/learn/" target="_blank">GraphQL documentation</a><br><br><br>
+					<p>GraphQL tutorial playlist</p>
+					<a href="https://youtube.com/playlist?list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f" target="_blank">GraphQL tutorial playlist</a>
+					
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning NGiNX</h3><br>
+					<a href="https://www.youtube.com/watch?v=WHv_t_yK-QM" target="_blank">What is NginX and What are its use cases?</a><br><br><br>
+					<a href="https://www.javatpoint.com/nginx-tutorial" target="_blank">Tutorial</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/the-nginx-handbook/" target="_blank">Handbook</a><br><br><br>
+					<a href="https://docs.nginx.com/" target="_blank">NGiNX documentation</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=WuH0T9FHDZ4" target="_blank">What is NGiNX - easy way</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=-oTdaFDvLo4" target="_blank">How to deploy a server - Node.js + MongoDB + NGiNX Tutorial</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Advance GitHub Features</h3><br>
+					<a href="https://github.com/skills/publish-packages" target="_blank">Publish packages</a><br><br><br>
+					<a href="https://github.com/skills/github-pages" target="_blank">GitHub pages</a><br><br><br>
+					<a href="https://github.com/skills/hello-github-actions" target="_blank">GitHub actions</a><br><br><br>
+					<a href="https://github.com/skills/continuous-integration" target="_blank">Continuous integration</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning Redis</h3><br>
+					<p>Redis tutorial</p>
+					<a href="https://www.tutorialspoint.com/redis/index.htm#:~:text=Redis%20is%20an%20open%20source,Redis%20is%20written%20in%20C." target="_blank">Redis tutorial - TutorialsPoint</a><br><br><br>
+					<a href="https://www.javatpoint.com/redis-tutorial" target="_blank">Redis tutorial - Javatpoint</a><br><br><br>
+					<p>Getting to know Redis</p>
+					<a href="https://redis.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/" target="_blank">Ebook - Redis</a><br><br><br>
+					<a href="https://redis.io/docs/about/" target="_blank">Redis - Docs</a><br><br><br>
+					<p>Redis Crash course</p>
+					<a href="https://www.youtube.com/watch?v=Hbt56gFj998" target="_blank">Redis Crash Course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=jgpVdJB2sKQ" target="_blank">Redis Crash Course - WebdevSimplified(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=XCsS_NVAa1g" target="_blank">Redis Crash Course - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=OqCK95AS-YE" target="_blank">Redis Crash Course - TechWorld with Nana(Youtube)</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning CDN</h3><br>
+					<p>System Design CDN(Simplified)</p>
+					<a href="https://www.youtube.com/watch?v=8zX0rue2Hic" target="_blank">System Design CDN(Simplified)</a><br><br><br>
+					<p>What is CDN?</p>
+					<a href="https://www.cloudflare.com/en-in/learning/cdn/what-is-a-cdn/" target="_blank">Resource 1</a><br><br><br>
+					<a href="https://www.hostinger.in/tutorials/what-is-cdn" target="_blank">Resource 2</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Bsq5cKkS33I" target="_blank">Resource 3</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=841kyd_mfH0" target="_blank">Resource 4</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learn about Cloud Providers</h3><br>
+					<a href="https://cloud.google.com/docs" target="_blank">GCP</a><br><br><br>
+					<a href="https://docs.microsoft.com/en-us/azure/?product=popular" target="_blank">Azure</a><br><br><br>
+					<a href="https://docs.aws.amazon.com/" target="_blank">AWS</a><br><br><br>
+					<a href="https://www.civo.com/docs" target="_blank">Civo</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning scaling</h3><br>
+					<a href="https://www.youtube.com/watch?v=xUumgxZ04SM" target="_blank">App Server Scaling</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=sDlCSIDwpDs" target="_blank">Web APP Architecture</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=xpDnVSmNFX0" target="_blank">Types of scaling</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Deploying on web servers</h3><br>
+					<a href="https://www.freecodecamp.org/news/deploying-a-mern-application-using-mongodb-atlas-to-heroku/" target="_blank">How to Deploy a MERN Application to Heroku - FreeCodeCamp</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/develop-deploy-first-fullstack-web-app/" target="_blank">Develop and Deploy fullstack web app - FreeCodeCamp</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=7aRjGIhwyQM" target="_blank">Linux Server Setup & MERN Deployment - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://youtu.be/oykl1Ih9pMg" target="_blank">Full Node.js Deployment - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://youtu.be/71wSzpLyW9k" target="_blank">Learn The MERN Stack, Prepare & Deploy - Traversy Media(Youtube)</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Sample projects for practice</h3><br>
+					<a href="https://www.youtube.com/watch?v=1RHDhtbqo94" target="_blank">Build and deploy a modern social media app - JavaScript Mastery(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLj-4DlPRT48k8TZ2ZjzbjnAq_wgIwsIab" target="_blank">Build and deploy a modern netflix clone - Lama Dev(Youtube)</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<p><b><i>Create several application clones with your touch to it and deploy them (eg: YouTube, Spotify, Amazon, Netflix, etc)</i></b></p>
+				</div>
+			</div>
+			
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Done?</h3><br>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/index.html">Home</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Frontend.html">Frontend Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Backend.html">Backend Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/About.html">About Us</a>
+				
+				</div>
+			</div>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+</body>
+</html>
+
+

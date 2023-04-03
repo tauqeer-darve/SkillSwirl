@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="/home/tauqeerd/Documents/Projects/Phoenix/img/logo.jpg">
+	<title>Frontend Development - SkillSwirl</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			color: #222;
+			background-color: #f8f9fa;
+		}
+		
+		.container {
+			max-width: 1300px;
+			height: 100vh;
+  			width: 100vw;
+			margin: 0 auto;
+			#padding: 20px;
+		}
+		
+		.nav {
+			display: flex;
+			align-items: center;
+		}
+		
+		.nav li {
+			list-style: none;
+			margin-left: 20px;
+		}
+		
+		.nav li a {
+			text-decoration: none;
+			color: #222;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.nav li a:hover {
+			background-color: #e6e6e6;
+			border-radius: 10px;
+		}
+		
+		.hero {
+			background-image: url("https://images.unsplash.com/photo-1581094355982-2f12d1db4558");
+			background-size: cover;
+			background-position: center;
+			height: 600px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px #000;
+		}
+		
+		.hero h1 {
+			font-size: 64px;
+			margin: 0;
+		}
+		
+		.hero p {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		.categories {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 25px 0;
+		}
+		
+		.category {
+			flex: 1;
+			margin-right: 20px;
+			margin-left: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+		}
+		
+		.category:hover {
+			transform: translateY(-10px);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+		}
+		
+		.category img {
+			width: 1225px;
+			height: 400px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+		}
+		
+		.featured {
+			margin-bottom: 50px;
+		}
+		
+		.featured h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			display: flex;
+			margin-bottom: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		
+		
+		
+		
+		.course-info {
+			flex: 1;
+			padding: 20px;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+			color: #5f3333;
+		}
+		
+		.course-info a {
+			background-color: #ff4500;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: 16px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.course-info a:hover {
+			background-color: #ff5e00;
+		}
+		
+		.footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.footer p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+		
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.footer a:hover {
+			color: #ff4500;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+			
+			header {
+				flex-direction: column;
+				align
+			justify-content: center;
+			text-align: center;
+			padding: 20px;
+			margin-bottom: 50px;
+		}
+		
+				
+		.categories {
+			flex-direction: column;
+		}
+		
+		.category {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.course img {
+			margin-bottom: 20px;
+		}
+		
+		.course-info {
+			text-align: center;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course-info a {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<section class="categories">
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/frontend.gif" alt="Learn">
+				<h2>Frontend Development</h2>
+				<p>The term "Frontend Development" refers to the process of designing and creating the user interface of a website or application. This involves writing HTML, CSS, and JavaScript code to create the layout, style, and interactivity of the website or application that users interact with. Frontend developers must have a strong understanding of user experience, design principles, and web development technologies.</p>
+			</div>
+			
+		</section>
+		<section class="featured">
+			<h2>Frontend Roadmap:</h2>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Introduction</h3><br>
+					<p>What is front end developer?</p>
+					<a href="https://frontendmasters.com/guides/front-end-handbook/2018/what-is-a-FD.html" target="_blank">What is a frontend developer? - frontendmasters.com</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer" target="_blank">Frontend web developer - Mozilla Developer docs</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/front-end-developer-what-is-front-end-development-explained-in-plain-english/" target="_blank">What is frontend development - Freecodecamp</a><br><br><br>
+					<p>What is frontend web development?</p>
+					<a href="https://www.youtube.com/watch?v=qyHyFsT7Hig" target="_blank">Frontend Development explained - Mayuko(Youtube)</a><br><br><br>
+					<a href="https://en.wikipedia.org/wiki/Front-end_web_development" target="_blank">Frontend web development - Wikipedia</a>
+
+					
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Understanding Internet</h3><br>
+					<p>How does internet work?</p>
+					<a href="https://www.youtube.com/watch?v=IPvYjXCsTg8" target="_blank">Computer Networking course - Kunal Khushwaha(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=yd1JhZzoS6A" target="_blank">How the Internet Travel Across Oceans? - TechVision(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=TNQsmPf24go" target="_blank">How does the Internet Work? - Vox(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work" target="_blank">How does the Internet Work? - Mozilla web docs</a><br><br><br>
+					<a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm" target="_blank">How Does the Internet Work? - Stanford.edu</a><br><br><br>
+					<a href="https://www.cloudflare.com/en-in/learning/network-layer/how-does-the-internet-work/" target="_blank">How Does the Internet Work? - cloudflare</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=x3c1ih2NJEg" target="_blank">How Does the Internet Work? - Lesics(Youtube)</a><br><br><br>
+					<a href="https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/" target="_blank">What is DNS? | How DNS works</a><br><br><br>
+					<p>Internet-CS50's understanding technology</p>
+					<a href="https://www.youtube.com/watch?v=n_KghQP86Sw" target="_blank">Resource</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning HTML</h3><br>
+					<p>HTML Tutorial</p>
+					<a href="https://www.youtube.com/watch?v=kUMe1FH4CHE" target="_blank">Learn HTML - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.codecademy.com/learn/learn-html" target="_blank">Learn HTML - Codecadmeny</a><br><br><br>
+					<a href="https://www.w3schools.com/html/" target="_blank">HTML Tutorial - W3schools</a><br><br><br>
+					<a href="https://www.tutorialspoint.com/html/index.htm" target="_blank">HTML Tutorial - TutorialsPoint</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=pQN-pnXPaVg" target="_blank">HTML course, build a website - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank">HTML crash course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=PlxWf493en4" target="_blank">HTML Tutorial, making a Website - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics" target="_blank">Semantics - MDN Web Docs Glossary: Definitions of Web-related terms | MDN</a><br><br><br>
+					<a href="https://github.com/seo/guide">Basics of SEO</a><br><br><br>
+					<a href="https://github.com/hail2u/html-best-practices" target="_blank">HTML best practices</a><br><br><br>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning CSS</h3><br>
+					<p>CSS Tutorials</p>
+					<a href="https://web.dev/learn/css/" target="_blank"">Learn CSS - web.dev</a><br><br><br>
+					<a href="https://www.codecademy.com/learn/learn-css" target="_blank"">Learn CSS - codecademy</a><br><br><br>
+					<a href="https://www.w3schools.com/css/" target="_blank">CSS tutorial -w3schools</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=1Rs2ND1ryYc" target="_blank">CSS zero to hero - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/kepowob" target="_blank">Kevin Powell(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLZlA0Gpn_vH9D0J0Mtp6lIiD_8046k3si" target="_blank">Introduction to CSS - Web Dev Simplified</a><br><br><br>
+					<a href="https://webflow.com/blog/responsive-web-design" target="_blank">The guide to responsive web design</a><br><br><br>
+					<a href="https://flexboxfroggy.com/" target="_blank">Learn flexbox by gaming</a><br><br><br>
+					<a href="https://cssgridgarden.com/" target="_blank">Learn Grid by gaming</a><br><br><br>
+					<a href="http://www.hexinvaders.com/" target="_blank">Learn Hex Code by gaming</a><br><br><br>
+					<a href="https://flukeout.github.io/" target="_blank">CSS Diner</a><br><br><br>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning Javascript</h3><br>
+					<p>JS Tutorials</p>
+					<a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" target="_blank">Learn JavaScript - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=W6NZfCO5SIk" target="_blank">JavaScript Tutorial - Programming with Mosh(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=jS4aFq5-91M" target="_blank">JavaScript Programming - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.w3schools.com/js/" target="_blank">JavaScript Tutorial - w3schools</a><br><br><br>
+					<a href="https://www.codecademy.com/learn/introduction-to-javascript" target="_blank">Learn JavaScript - Codecademy</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/learn-javascript-free-js-courses-for-beginners/" target="_blank">Free JS Courses for Beginners - FreeCodeCamp</a><br><br><br>
+					<a href="https://exercism.org/" target="_blank">Free JS Practice website to master JS - exercism</a><br><br><br>
+					<a href="https://github.com/Asabeneh/30-Days-Of-JavaScript" target="_blank">Free JS repository to practice JS - 30-Days-Of-JavaScript</a><br><br><br>
+					<a href="https://javascript.info/" target="_blank">Learn JavaScript - JavaScriptInfo</a><br><br><br>
+					<a href="http://play.elevatorsaga.com/" target="_blank">Elevator Saga Game</a><br><br><br>
+					<a href="https://www.codingame.com/start" target="_blank">Codingame</a><br><br><br>
+					<p>Understanding JavaScript</p>
+					<a href="https://www.youtube.com/playlist?list=PLlasXeu85E9cQ32gLCvAvr9vNaUccPVNP" target="_blank">NamasteJS/How JS works - Akshay Saini</a>
+					
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Frontend Projects</h3><br>
+					<p>Sample Projects for Practice</p>
+					<a href="https://www.frontendeval.com/" target="_blank">frontendeval.com</a><br><br><br>
+					<a href="https://www.frontendmentor.io/" target="_blank">frontendmentor.io</a><br><br><br>
+					<a href="https://www.frontendpractice.com/" target="_blank">frontendpractice.com</a><br><br><br>
+					<a href="https://www.icodethis.com/" target="_blank">iCodeThis.com</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learning Version Control</h3><br>
+					<a href="https://git-scm.com/docs/gittutorial" target="_blank">Git Documentation</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=apGV9Kg7ics" target="_blank">Git Tutorial</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Understanding Package Managers</h3><br>
+					<a href="https://www.youtube.com/watch?v=P3aKRdUyr0s" target="_blank">What is NPM & why do we need it?</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=jHDhaSSKmB0" target="_blank">NPM crash course</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=g9_6KmiBISk" target="_blank">Yarn package manager crash course</a><br><br><br>
+					<a href="https://frontendmasters.com/guides/front-end-handbook/2018/learning/package-manager.html" target="_blank">Learn Package Manager</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/javascript-package-manager-npm-and-yarn/" target="_blank">Javascript Package manager</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Package_management" target="_blank">Package management basics</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Learn Build Tools</h3><br>
+					<a href="https://www.youtube.com/watch?v=V5qvWl-O-zE" target="_blank">What are build tools?</a><br><br><br>
+					<a href="https://www.developerdrive.com/best-build-tools-frontend-development/" target="_blank">6 best build tools</a><br><br><br>
+					<a href="https://www.codecademy.com/learn/learn-build-tools" target="_blank">Learn build tools?</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/making-sense-of-front-end-build-tools-3a1b3a87043b/" target="_blank"> Build Tools - Freecodecamp</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Let's pick a framework/library for you</h3><br>
+					<a href="https://www.youtube.com/watch?v=W6KCPXl6Zuc" target="_blank">Frameworks - Web Development</a><br><br><br>
+					<p>React</p>
+					<a href="https://youtu.be/dyFVwXROzZk" target="_blank">React Tutorial - Freecodecamp(Youtube)</a><br><br><br>
+					<a href="https://react.dev/" target="_blank">React Official Docs</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLC3y8-rFHvwjkxt8TOteFdT_YmzwpBlrG" target="_blank">React Router Tutorial</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK" target="_blank">React Redux Tutorials</a><br><br><br>
+					<p>Vue JS</p>
+					<a href="https://www.youtube.com/watch?v=FXpIoQ_rT_c" target="_blank">Tutorial</a><br><br><br>
+					<a href="https://vuejs.org/tutorial/#step-1" target="_blank">Docs</a><br><br><br>
+					<p>Angular</p>
+					<a href="https://www.youtube.com/watch?v=k5E2AVpwsko" target="_blank">Angular Tutorial - Programming with Mosh(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=2OHbjep_WjQ" target="_blank">Learn Angular - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://angular.io/docs" target="_blank">Docs</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>CSS Frameworks</h3><br>
+					<a href="https://www.browserstack.com/guide/top-css-frameworks" target="_blank">Top CSS Frameworks</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=CQuTF-bkOgc" target="_blank">Tailwind vs MUI vs Bootstrap vs Chakra vs...</a><br><br><br>
+					<p>Bootstrap</p>
+					<a href="https://www.youtube.com/watch?v=-qfEOE4vtxE" target="_blank">Tutorial</a><br><br><br>
+					<a href="https://getbootstrap.com/docs/5.2/getting-started/introduction/" target="_blank">Docs</a><br><br><br>
+					<p>Chakra UI</p>
+					<a href="https://www.chakrauiforbeginners.com/play" target="_blank">Tutorial 1 - Chakra UI for beginners</a><br><br><br>
+					<a href="https://egghead.io/lessons/react-install-and-setup-chakra-ui-in-a-react-project" target="_blank">Tutorial 2 - Build check out page with chakra UI</a><br><br><br>
+					<a href="https://chakra-ui.com/getting-started" target="_blank">Docs</a><br><br><br>
+					<p>Tailwind CSS</p>
+					<a href="https://www.youtube.com/watch?v=UBOj6rqRUME" target="_blank">Tailwind css crash course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=dFgzHOX84xQ" target="_blank">Tailwind crash course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://tailwindcss.com/docs/installation" target="_blank">Docs</a>					
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>What is PWA(Progressive Web Apps)</h3><br>
+					<a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9gTxqJBcDmoi5Q2pzDusSL7" target="_blank">PWA tutorial - The Net Ninja(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank">Progressive web apps - Mozilla developer docs</a><br><br><br>
+					<a href="https://www.freecodecamp.org/news/what-are-progressive-web-apps/" target="_blank">What are progressive web apps? - Freecodecamp</a><br><br><br>
+					<a href="https://web.dev/progressive-web-apps/" target="_blank">Progressive Web Apps</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Sample projects for practice</h3><br>
+					<a href="https://www.frontendeval.com/" target="_blank">frontendeval.com</a><br><br><br>
+					<a href="https://www.frontendmentor.io/" target="_blank">frontendmentor.io</a><br><br><br>
+					<a href="https://www.frontendpractice.com/" target="_blank">frontendpractice.com</a><br><br><br>
+					<a href="https://www.icodethis.com/" target="_blank">iCodeThis.com</a><br><br><br>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Done?</h3><br>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/index.html">Home</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Backend.html">Backend Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Fullstack.html">Fullstack Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/About.html">About Us</a>
+				
+				</div>
+			</div>
+			<div class="course">
+				<div>
+                
+				</div>
+			</div>
+		</section>
+		
+	</div>
+</body>
+</html>
+
+

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="/home/tauqeerd/Documents/Projects/Phoenix/img/logo.jpg">
+	<title>Backend Development - SkillSwirl</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			color: #222;
+			background-color: #f8f9fa;
+		}
+		
+		.container {
+			max-width: 1300px;
+			margin: 0 auto;
+			#padding: 20px;
+		}
+		
+		.nav {
+			display: flex;
+			align-items: center;
+		}
+		
+		.nav li {
+			list-style: none;
+			margin-left: 20px;
+		}
+		
+		.nav li a {
+			text-decoration: none;
+			color: #222;
+			font-size: 16px;
+			font-weight: bold;
+			padding: 10px 20px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.nav li a:hover {
+			background-color: #e6e6e6;
+			border-radius: 10px;
+		}
+		
+		.hero {
+			background-image: url("https://images.unsplash.com/photo-1581094355982-2f12d1db4558");
+			background-size: cover;
+			background-position: center;
+			height: 600px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px #000;
+		}
+		
+		.hero h1 {
+			font-size: 64px;
+			margin: 0;
+		}
+		
+		.hero p {
+			font-size: 24px;
+			margin-top: 20px;
+		}
+		.categories {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 25px 0;
+		}
+		
+		.category {
+			flex: 1;
+			margin-right: 20px;
+			margin-left: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			transition: all 0.2s ease-in-out;
+			cursor: pointer;
+		}
+		
+		.category:hover {
+			transform: translateY(-10px);
+			box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+		}
+		
+		.category img {
+			width: 1225px;
+			height: 400px;
+			object-fit: cover;
+			border-radius: 10px;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin: 0;
+			color: #888;
+		}
+		
+		.featured {
+			margin-bottom: 50px;
+		}
+		
+		.featured h2 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			display: flex;
+			margin-bottom: 20px;
+			background-color: #fff;
+			box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+			border-radius: 10px;
+			overflow: hidden;
+		}
+		
+		
+		
+		
+		.course-info {
+			flex: 1;
+			padding: 20px;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin: 0;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin: 0;
+			margin-bottom: 20px;
+			color: #5f3333;
+		}
+		
+		.course-info a {
+			background-color: #ff4500;
+			color: #fff;
+			padding: 10px 20px;
+			border-radius: 30px;
+			text-decoration: none;
+			font-size: 16px;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.course-info a:hover {
+			background-color: #ff5e00;
+		}
+		
+		.footer {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		.footer p {
+			margin: 0;
+			margin-bottom: 10px;
+			font-size: 16px;
+		}
+		
+		.footer a {
+			color: #fff;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+		}
+		
+		.footer a:hover {
+			color: #ff4500;
+		}
+		
+		@media screen and (max-width: 768px) {
+			.container {
+				padding: 10px;
+			}
+			
+			header {
+				flex-direction: column;
+				align
+			justify-content: center;
+			text-align: center;
+			padding: 20px;
+			margin-bottom: 50px;
+		}
+		
+				
+		.categories {
+			flex-direction: column;
+		}
+		
+		.category {
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+		
+		.category h2 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.category p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course {
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		.course img {
+			margin-bottom: 20px;
+		}
+		
+		.course-info {
+			text-align: center;
+		}
+		
+		.course-info h3 {
+			font-size: 24px;
+			margin-bottom: 10px;
+		}
+		
+		.course-info p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+		
+		.course-info a {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+</style>
+</head>
+<body>
+
+	<div class="container">
+		<section class="categories">
+			<div class="category">
+				<img src="/home/tauqeerd/Documents/Projects/Phoenix/img/backend.gif" alt="Learn">
+				<h2>Backend Development</h2>
+				<p>Backend development is the development of server-side applications, services, and APIs that enable the functionality of an application or a website. It involves writing code that runs on the server and interacts with databases, APIs, and other resources to provide data and functionality to the frontend of the application. The goal of backend development is to create robust, scalable, and secure systems that can handle a large number of users and data.</p>
+			</div>
+			
+		</section>
+		<section class="featured">
+			<h2>Backend Roadmap:</h2>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Introduction</h3><br>
+					<a href="https://www.youtube.com/watch?v=cbSrsYiRamo" target="_blank">What is a Backend development?</a><br><br><br>
+					<a href="https://dev.to/kaperskyguru/introduction-to-backend-development-506a" target="_blank">Introduction to Backend Development</a><br><br><br>
+					<a href="https://boot.dev/tracks/backend" target="_blank">Back-end Developer Career Path</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=4r6WdaY3SOA" target="_blank">How Backend works</a><br><br><br>
+					<a href="Guide to Backend Development" target="_blank">Guide to Backend Development</a><br><br><br>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Basics of Frontend</h3><br>
+					<a href="https://www.youtube.com/watch?v=QA0XpGhiz5w" target="_blank">Frontend Developer crash course</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=1Rs2ND1ryYc" target="_blank">CSS</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=kUMe1FH4CHE" target="_blank">HTML</a><br><br><br>
+					<p>Build a project</p>
+					<a href="https://www.frontendpractice.com/" target="_blank">frontendpractice.com</a><br><br><br>
+					<a href="https://www.frontendmentor.io/" target="_blank">frontendmentor.io</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Understanding Internet</h3><br>
+					<p>How does internet work?</p>
+					<a href="https://www.youtube.com/watch?v=IPvYjXCsTg8" target="_blank">Computer Networking course - Kunal Khushwaha(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=yd1JhZzoS6A" target="_blank">How the Internet Travel Across Oceans? - TechVision(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=TNQsmPf24go" target="_blank">How does the Internet Work? - Vox(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work" target="_blank">How does the Internet Work? - Mozilla web docs</a><br><br><br>
+					<a href="https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm" target="_blank">How Does the Internet Work? - Stanford.edu</a><br><br><br>
+					<a href="https://www.cloudflare.com/en-in/learning/network-layer/how-does-the-internet-work/" target="_blank">How Does the Internet Work? - cloudflare</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=x3c1ih2NJEg" target="_blank">How Does the Internet Work? - Lesics(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=n_KghQP86Sw" target="_blank">Internet - CS50's understanding technology</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=2JYT5f2isg4" target="_blank">Full HTTP Networking Course - Boot.dev</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview" target="_blank">An overview of HTTP</a><br><br><br>
+					<a href="https://web.dev/howbrowserswork/" target="_blank">How browsers work</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Operating System Basics</h3><br>
+					<a href="https://www.youtube.com/watch?v=RozoeWzT7IM" target="_blank">Introduction to operating systems - Jenny's Lectures(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=6-mdtMKfEYM" target="_blank">Operating system basics - Geek's Lesson(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=GjNp0bBrjmU" target="_blank">How do operating systems work? - ClickView(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=pVzRTmdd9j0" target="_blank">What is an operating system - Techquickie(Youtube)</a><br><br><br>
+					<a href="https://www.tutorialspoint.com/operating_system/index.htm#:~:text=An%20Operating%20System%20(OS)%20is%20an%20interface%20between%20a%20computer,as%20disk%20drives%20and%20printers." target="_blank">Operating system tutorial - Tutorialspoint</a><br><br><br>
+					<a href="https://www.guru99.com/os-tutorial.html" target="_blank">Operating System Tutorial - Lawrence Williams</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Linux Terminal Basics</h3><br>
+					<a href="https://www.youtube.com/watch?v=iwolPf6kN-k" target="_blank">Complete Linux Course</a><br><br><br>
+					<a href="https://youtu.be/sWbUDq4S6Y8" target="_blank">Introduction to Linux – Full Course for Beginners By FreeCodeCamp</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=J2zquYPJbWY" target="_blank">Basic Linux Commands</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=cBokz0LTizk" target="_blank">Linux Tutorial</a><br><br><br>
+					<a href="https://www.guru99.com/linux-commands-cheat-sheet.html" target="_blank">Linux Command Cheatsheet</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PL2kSRH_DmWVZp_cu6MMPWkgYh7GZVFS6i" target="_blank">Linux Masterclass Course - Apoorv Goyal(YouTube)</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Javascript</h3><br>
+					<p>JS Tutorials</p>
+					<a href="https://www.youtube.com/watch?v=fBNz5xF-Kx4" target="_blank">Node.js Crash Course - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://nodejs.org/en/docs/" target="_blank">Node.js Documentation</a><br><br><br>
+					<a href="https://expressjs.com/en/starter/installing.html" target="_blank">Express js Getting started</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=TlB_eWDSMt4" target="_blank">Node.js tutorial-Programming with Mosh(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU" target="_blank">Node.js crash course playlist - The Net Ninja(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Oe421EPjeBE" target="_blank">Node.js and express.js course - freecodecamp(Youtube)</a>
+					
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Version Control</h3><br>
+					<a href="https://git-scm.com/docs/gittutorial" target="_blank">Git documentation</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=apGV9Kg7ics&t=1964s" target="_blank">Git Tutorial</a><br><br><br>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Relational Databases</h3><br>
+					<a href="https://boot.dev/learn/learn-sql" target="_blank">Learn SQL and Relational Databases</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=OqjJjpjDRLc" target="_blank">What is Relational Databases</a><br><br><br>
+					<p>Postgre SQL</p>
+					<a href="https://www.youtube.com/watch?v=qw--VYLpxG4" target="_blank">PostgreSQL Tutorial - freecodecamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLwvrYc43l1MxAEOI_KwGe8l42uJxMoKeS" target="_blank">PosgresSQL Course - Amigoscode(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Ir7nScz_Vs4" target="_blank">PosgresSQL Course - DataZ(Youtube)</a><br><br><br>
+					<a href="https://www.postgresqltutorial.com/" target="_blank">postgresqltutorial.com</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLillGF-RfqbaEmlPcX5e_ejaK7Y5MydkW" target="_blank">Nodejs and PostgreSQL Project</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>NoSQL Databases</h3><br>
+					<a href="https://www.youtube.com/watch?v=uD3p_rZPBUQ" target="_blank">What is NoSQL Databases?</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Q5aTUc7c4jg" target="_blank">SQL vs NoSQL</a><br><br><br>
+					<p>MongoDB</p>
+					<a href="https://learn.mongodb.com/learning-paths/introduction-to-mongodb" target="_blank">Introduction & getting started with MongoDB - MongoDB University M001</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Www6cTUymCY" target="_blank">MongoDB Tutorial - Amigoscode(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PL4cUxeGkcC9h77dJ-QJlwGlZlTd4ecZOA" target="_blank">Complete MongoDB Tutorial - The Net Ninja(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=GFaKsrfQkAc&t=9298s" target="_blank">Complete MongoDB Tutorial - DataZ(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=1NrHkjlWVhM" target="_blank">Build a Markdown Blog with Node.js, Express and MongoDB</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>APIs</h3><br>
+					<p>Learn and Build APIs</p>
+					<a href="https://www.youtube.com/watch?v=pKd0Rpw7O48" target="_blank">REST API with Node js & Express - Programming with Mosh(Youtube)</a><br><br><br>
+					<a href="https://www.freecodecamp.org/learn/back-end-development-and-apis/" target="_blank">Back End Development and APIs - FreeCodeCamp</a><br><br><br>
+					<a href="https://boot.dev/learn/learn-web-servers" target="_blank">Learn API Servers in Go - Boot.dev</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=fgTGADljAeg" target="_blank">REST API With Node.js, Express, & MongoDB - Web Dev Simplified(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=fsCjFHuMXj0" target="_blank">Build a Node.js API - FreeCodeCamp(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=N-4prIh7t38" target="_blank">JSON APIs</a><br><br><br>
+					<a href="https://youtu.be/WXsD0ZgxjRw" target="_blank">APIs for Beginners 2023 - How to use an API (Full Course)</a><br><br><br>
+					<p>Caching</p>
+					<a href="https://youtu.be/HiBDZgTNpXY" target="_blank">Client Side Caching</a><br><br><br>
+					<a href="https://www.starwindsoftware.com/resource-library/server-side-caching/" target="_blank">Server side Caching</a><br><br><br>
+					<a href="https://www.cloudflare.com/en-ca/learning/cdn/what-is-a-cdn/" target="_blank">CDN (Content Delivery Network)</a><br><br><br>
+					<p>MVC</p>
+					<a href="https://www.youtube.com/watch?v=DUg2SWWK18I" target="_blank">MVC explained - Web Dev Simplified(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=zW_tZR0Ir3Q" target="_blank">Express Router & MVC - The Net Ninja(Youtube)</a><br><br><br>
+					<p>Deployment</p>
+					<a href="https://www.youtube.com/watch?v=_GSOnHRYSS0" target="_blank">Node.js & Express,Deploying an app- Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=oykl1Ih9pMg" target="_blank">Full Node.js Deployment - Traversy Media(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment" target="_blank">Express Tutorial, Deploying to production - Mozilla web docs</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Microservices</h3><br>
+					<a href="https://www.youtube.com/watch?v=j3XufmvEMiM" target="_blank">What are Microservices?</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PLrwNNiB6YOA0KmfliJoSuZzEN6tjSdEXc" target="_blank">NodeJs Microservices</a><br><br><br>
+					<a href="https://www.freecodecamp.org/learn/back-end-development-and-apis/#mongodb-and-mongoose" target="_blank">Backend Development and API projects</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=qYhRvH9tJKw" target="_blank">What is a microservices architecture and it's advantages?</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Web Security</h3><br>
+					<a href="https://www.youtube.com/watch?v=kBzbKUirOFk" target="_blank">HTTPS and Web Security</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=5mUUBkxayQ4" target="_blank">How Hackers use DevTools</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=tGMPWVl_l9Y" target="_blank">Secure ExpressJS application with Helment</a><br><br><br>
+					<a href="https://blog.sqreen.com/nodejs-security-best-practices/" target="_blank">NodeJS Security Best Practices</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Testing</h3><br>
+					<a href="https://www.youtube.com/watch?v=I4BZQr-5mBY" target="_blank">Testing a Rest API</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=8gHEv5iNRKk" target="_blank">Jest Tutorial</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=Bs68k6xfR3E" target="_blank">Testing Node.js with Mocha</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=ISAjES_Gklc" target="_blank">Test Driven Development</a><br><br><br>
+					<p>Documentations</p>
+					<a href="https://mochajs.org/" target="_blank">Mocha</a><br><br><br>
+					<a href="https://www.chaijs.com/guide/" target="_blank">Chai</a><br><br><br>
+					<a href="https://jestjs.io/docs/getting-started" target="_blank">Jest</a><br><br><br>
+					<a href="https://cucumber.io/docs/guides/" target="_blank">Cucumber</a><br><br><br>
+					<a href="https://pactumjs.github.io/guides/api-testing.html" target="_blank">Pactum</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Containerization</h3><br>
+					<a href="https://www.youtube.com/watch?v=0qotVMX-J5s" target="_blank">Containers Explained</a><br><br><br>
+					<p>Docker</p>
+					<a href="https://www.youtube.com/watch?v=17Bl31rlnRM" target="_blank">Docker Tutorial - Kunal Khushwaha(Youtube)</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=3c-iBn73dDE" target="_blank">Docker Tutorial - TechWorld With Nana(Youtube)</a><br><br><br>
+					<a href="https://boot.dev/learn/learn-docker" target="_blank">Learn Docker - Boot.dev</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=9zUHg7xjIqQ" target="_blank">Learn Docker - freecodecamp(Youtube)</a><br><br><br>
+					<a href="https://docs.docker.com/" target="_blank">Docs</a><br><br><br>
+					<a href="https://www.youtube.com/watch?v=PsWeSg38XFY" target="_blank">Build a NodeJS application with Docker</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Web Servers</h3><br>
+					<a href="https://www.youtube.com/watch?v=JhpUch6lWMw" target="_blank">Web servers and their working - Hussein Nasser(Youtube)</a><br><br><br>
+					<a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server" target="_blank">What is a web server - Mozilla web docs</a><br><br><br>
+					<a href="https://www.tutorialspoint.com/internet_technologies/web_servers.htm" target="_blank">Web Server - Tutorialspoint</a><br><br><br>
+					<a href="https://www.nginx.com/resources/glossary/web-server/" target="_blank">What is a web server? - NGINX</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Build Projects</h3><br>
+					<a href="https://www.youtube.com/watch?v=qwfE7fSVaZM" target="_blank">4 projects with Node.js/Express</a><br><br><br>
+					<a href="https://gist.github.com/MWins/41c6fec2122dd47fdfaca31924647499" target="_blank">Project Ideas</a><br><br><br>
+					<a href="https://www.youtube.com/playlist?list=PL9iaMyazOxXsIl-WQV9hoVmnHYy49DuVl" target="_blank">50 Node.js/Express Project with tutorial</a>
+				</div>
+			</div>
+			<div class="course">
+				
+				<div class="course-info">
+					<h3>Done?</h3><br>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/index.html">Home</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Frontend.html">Frontend Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/Fullstack.html">Fullstack Development</a>
+					<a href="/home/tauqeerd/Documents/Projects/Phoenix/Webpage/About.html">About Us</a>
+				</div>
+			</div>
+		</section>
+		
+	</div>
+</body>
+</html>
