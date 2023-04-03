@@ -1,8 +1,3 @@
-//whoa, just noticed this no longer works (30-10-2015), tap once and it's immediate game over. Hope to fix this soon. apologies to all you  flap masters :D
-
-//Entry for http://jams.gamejolt.io/lowrezjam2014/games
-//sprite sheet : http://sakri.net/stuff/canvas/FlappyBird32x32Tall.png
-
 var readyStateCheckInterval = setInterval( function() {
     if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval);
