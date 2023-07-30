@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/logo.png">
 	<title>SkillSwirl</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -13,6 +15,7 @@
 			padding: 0;
 			color: #222;
 			background-color: #d3d3d3;
+			position: relative;
 		}
 		
 		.container {
@@ -29,6 +32,7 @@
         	margin: auto;
         	margin-top: 10px;
         	text-align: center;
+        	background-color: #d3d3d3;
         	border-radius: 50px;
         	border-bottom: 5px solid #333;
 		}
@@ -252,9 +256,118 @@
 			margin-bottom: 20px;
 		}
 	}
+	
+	.rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150vh; 
+  pointer-events: none;
+  z-index: -1; 
+}
+
+.drop {
+  position: absolute;
+  width: 1px;
+  height: 150px; 
+  background-color: #ff4500;
+  animation: rain-fall 1s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+}
+
+
+.play-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #ff4500;
+			color: #fff;
+			font-size: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+			position: fixed;
+			bottom: 30px;
+			right: 30px;
+		}
+
+		.play-button:hover {
+			background-color: #ff5e00;
+		}
+		
+		
+		
+
 </style>
 </head>
+
+<script>
+function createRaindrops() {
+  const rainContainer = document.querySelector('.rain');
+  const dropCount = 1000;
+
+ 
+  const maxRainHeight = Math.max(
+    document.documentElement.clientHeight,
+    document.documentElement.scrollHeight,
+    document.body.clientHeight,
+    document.body.scrollHeight
+  );
+
+
+  rainContainer.style.height = `${maxRainHeight}px`;
+
+  for (let i = 0; i < dropCount; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = `${Math.random() * 100}%`;
+    drop.style.top = `${Math.random() * maxRainHeight}px`;
+    drop.style.animationDelay = `${Math.random()}s`;
+    rainContainer.appendChild(drop);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', createRaindrops);
+
+
+
+		let isBackgroundMusicPlaying = false;
+
+		
+		function toggleBackgroundMusic() {
+			const audio = document.getElementById("background-music");
+			if (isBackgroundMusicPlaying) {
+				audio.pause();
+			} else {
+				audio.play();
+			}
+			isBackgroundMusicPlaying = !isBackgroundMusicPlaying;
+		}
+</script>
+
 <body>
+<audio id="background-music" autoplay loop>
+
+		<source src="audio/rain.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	
+
+<div class="rain"></div>
 	
 	<header class="header">
 	    <p></p>
@@ -262,7 +375,11 @@
 		     <h1 align="center">✎ SkillSwirl 🕹</h1><p align='center'>𓆩Expand your skills, Elevate your game𓆪</p>
 		</div>
 		<p></p>
+		    
 	</header>
+	<div class="play-button" onclick="toggleBackgroundMusic()">
+		<i class="fas fa-music"></i>
+	</div>
 	<div class="container">
 		<section class="categories">
 			<div class="category">
