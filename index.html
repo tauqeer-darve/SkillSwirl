@@ -24,18 +24,32 @@
 			padding: 20px;
 		}
 		
-		header {
+		.heading-container {
+            display: inline-block;
+            }
 		
-        	color: #333;
-        	padding: 0px;
-        	width: 30%;
-        	margin: auto;
-        	margin-top: 10px;
-        	text-align: center;
-        	background-color: #d3d3d3;
-        	border-radius: 50px;
-        	border-bottom: 5px solid #333;
-		}
+		h1 {
+            font-family: 'Space Mono', monospace;
+            font-size: clamp(3rem, 10vw, 10rem);
+            color: #ff5e00;
+            padding: 0.5rem 1rem; 
+            border-radius: 0.5rem;
+            background-color: transparent;
+            margin-top: 0rem; /* Reduce the top margin */
+            margin-bottom: 0rem; /* Reduce the top margin */
+        }
+
+
+        h1:hover {
+            background-color: transparent;;
+            color: #ff5e00;
+        }
+
+        header {
+            color: #222;
+            margin: auto;
+             text-align: center;    
+        }
 		
 		
 		
@@ -370,11 +384,40 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 <div class="rain"></div>
 	
 	<header class="header">
-	    <p></p>
-		<div>
-		     <h1 align="center">✎ SkillSwirl 🕹</h1><p align='center'>𓆩Expand your skills, Elevate your game𓆪</p>
+		<div class="heading-container">
+		<h1 data-value="SkillSwirl" align="center">SkillSwirl</h1>
 		</div>
-		<p></p>
+		<script>
+        const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        let interval = null;
+
+        document.querySelector("h1").onmouseover = event => {
+            let iteration = 0;
+
+            clearInterval(interval);
+
+            interval = setInterval(() => {
+                event.target.innerText = event.target.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration) {
+                            return event.target.dataset.value[index];
+                        }
+
+                        return letters[Math.floor(Math.random() * 26)]
+                    })
+                    .join("");
+
+                if (iteration >= event.target.dataset.value.length) {
+                    clearInterval(interval);
+                }
+
+                iteration += 1 / 3;
+            }, 5);
+        }
+    </script>
+		
 		    
 	</header>
 	<div class="play-button" onclick="toggleBackgroundMusic()">
@@ -434,7 +477,7 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 			</div>
 		</section>
 		<section class="popular">
-			<h1>Featured Courses</h1>
+			<h2>Featured Courses</h2>
 			<h4>(Source: Free resources available over the internet.)</h4>
 			<div class="course">
 				<img src="img/front.gif" alt="Course">
