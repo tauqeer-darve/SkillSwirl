@@ -30,13 +30,16 @@
 		
 		h1 {
             font-family: 'Space Mono', monospace;
-            font-size: clamp(3rem, 10vw, 10rem);
+            font-size: clamp(1rem, 10vw, 8rem);
             color: #ff5e00;
              
             border-radius: 0.5rem;
             background-color: transparent;
             margin-top: 0.9rem; 
             margin-bottom: 0.5rem; 
+            border-radius: 50px;
+        border-bottom: 5px solid #ff5e00;
+        padding: 0px 80px;
         }
 
 
@@ -316,12 +319,42 @@
 			transition: background-color 0.2s ease-in-out;
 			position: fixed;
 			bottom: 30px;
-			right: 30px;
+			right: 20px;
 		}
 
 		.play-button:hover {
 			background-color: #ff4500;
 		}
+		
+		.scroll-to-top-button {
+			  display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #ff5e00;
+			color: #fff;
+			font-size: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+			position: fixed;
+			bottom: 80px;
+			right: 20px;
+			}
+
+.scroll-to-top-button:hover {
+			  background-color: #ff4500;
+			}
+
+.scroll-to-top-button a {
+			  text-decoration: none;
+			  color: #fff;
+			}
+
+
+
 		
 		
 		
@@ -384,7 +417,7 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 <div class="rain"></div>
 	
 	<header class="header">
-		<div class="heading-container">
+		<div class="heading-container" id="heading-container">
 		<h1 data-value="SkillSwirl" align="center">SkillSwirl</h1>
 		</div>
 		<script>
@@ -429,6 +462,10 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
     			<td align="center"></td>
     			<td align="center"></td>
     			<td align="center"><a href="#featured-courses">Courses</a></td>
+    			<td align="center"></td>
+    			<td align="center"></td>
+    			
+    			<td align="center"><a href="About.html">About Us</a></td>
   		</tr>
 	</table>
 	</div>
@@ -436,6 +473,11 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 	<div class="play-button" onclick="toggleBackgroundMusic()">
 		<i class="fas fa-music"></i>
 	</div>
+	<div class="scroll-to-top-button">
+  <a href="#heading-container"><i class="fas fa-arrow-up"></i></a>
+	</div>
+	<a id="header"></a>
+	
 	<div class="container">
 		<section class="categories">
 			<div class="category">
@@ -518,17 +560,7 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 			</div>
 			
 				
-				<div class="course-info">
-					
-					<a align='center' href="About.html">About Us</a>
 				
-				</div>
-			
-			<div class="course">
-				<div>
-                
-				</div>
-			</div>
 		</section>
 	</div>
 </body>
