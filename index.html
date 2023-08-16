@@ -32,11 +32,11 @@
             font-family: 'Space Mono', monospace;
             font-size: clamp(3rem, 10vw, 10rem);
             color: #ff5e00;
-            padding: 0.5rem 1rem; 
+             
             border-radius: 0.5rem;
             background-color: transparent;
-            margin-top: 0rem; /* Reduce the top margin */
-            margin-bottom: 0rem; /* Reduce the top margin */
+            margin-top: 0.9rem; 
+            margin-bottom: 0.5rem; 
         }
 
 
@@ -164,7 +164,7 @@
 		}
 		
 		.course-info a {
-			background-color: #ff4500;
+			background-color: #ff5e00;
 			color: #fff;
 			padding: 10px 20px;
 			border-radius: 30px;
@@ -272,11 +272,11 @@
 	}
 	
 	.rain {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 150vh; 
+  height: 100%;
   pointer-events: none;
   z-index: -1; 
 }
@@ -285,7 +285,7 @@
   position: absolute;
   width: 1px;
   height: 150px; 
-  background-color: #ff4500;
+  background-color: #ff5e00;
   animation: rain-fall 1s linear infinite;
 }
 
@@ -420,6 +420,19 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 		
 		    
 	</header>
+	
+	<div class="course-info">
+	<table align="center">
+  		<tr>
+    			<td align="center"><a href="#featured-games">Games</a></td>
+    			<td align="center"></td>
+    			<td align="center"></td>
+    			<td align="center"></td>
+    			<td align="center"><a href="#featured-courses">Courses</a></td>
+  		</tr>
+	</table>
+	</div>
+
 	<div class="play-button" onclick="toggleBackgroundMusic()">
 		<i class="fas fa-music"></i>
 	</div>
@@ -441,7 +454,7 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 				<p>Success is a journey, not a destination, and it is important to enjoy the process and learn from both successes and failures along the way.</p>
 			</div>
 		</section>
-		<section class="featured">
+		<section id="featured-games" class="featured">
 			<h2>Featured Games</h2>
 			<div class="course">
 				<img src="img/tictactoe.gif" alt="TicTacToe">
@@ -476,7 +489,7 @@ window.addEventListener('DOMContentLoaded', createRaindrops);
 				</div>
 			</div>
 		</section>
-		<section class="popular">
+		<section id="featured-courses" class="popular">
 			<h2>Featured Courses</h2>
 			<h4>(Source: Free resources available over the internet.)</h4>
 			<div class="course">
